@@ -81,10 +81,34 @@ These threshold-tuning results come from a different train/test partition than t
 - Further validation, calibration, fairness assessment, and cost-sensitive evaluation would be required before any practical deployment.
 
 ## How to Run
-Create and activate a Python virtual environment, install the dependencies, and run the scripts from the project root.
+
+### 1. Clone the repository
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/nikitam2612/credit-default-prediction.git
+cd credit-default-prediction
+```
+
+### 2. Create and activate a virtual environment
+
+**Windows (PowerShell):**
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Run the project scripts
+
+Run these commands from the project root directory, one at a time:
+
+```bash
 python src/data_loader.py
 python src/data_quality.py
 python src/eda.py
@@ -93,6 +117,8 @@ python src/compare_models.py
 python src/tune_threshold.py
 python src/feature_importance.py
 ```
+
+The scripts generate exploratory data analysis charts in `outputs/figures/` and model evaluation results in `outputs/metrics/`.
 
 ## Disclaimer
 This project is for educational and portfolio purposes only. It is not intended for making real-world lending or credit approval decisions.
