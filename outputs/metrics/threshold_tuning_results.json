@@ -1,0 +1,65 @@
+{
+    "model": "Random Forest",
+    "threshold_selection": "Highest validation F1-score",
+    "selected_threshold": 0.45,
+    "validation_results": [
+        {
+            "threshold": 0.25,
+            "precision": 0.34452411994784876,
+            "recall": 0.7965335342878673,
+            "f1_score": 0.48100113765642777
+        },
+        {
+            "threshold": 0.3,
+            "precision": 0.39522437216961714,
+            "recall": 0.7234363225320272,
+            "f1_score": 0.5111821086261981
+        },
+        {
+            "threshold": 0.35,
+            "precision": 0.4423274974253347,
+            "recall": 0.6473247927656368,
+            "f1_score": 0.5255429795044356
+        },
+        {
+            "threshold": 0.4,
+            "precision": 0.4832298136645963,
+            "recall": 0.586284853051997,
+            "f1_score": 0.529792305073204
+        },
+        {
+            "threshold": 0.45,
+            "precision": 0.523088023088023,
+            "recall": 0.546345139412208,
+            "f1_score": 0.5344636933284187
+        },
+        {
+            "threshold": 0.5,
+            "precision": 0.5682403433476395,
+            "recall": 0.49886963074604374,
+            "f1_score": 0.5313001605136437
+        }
+    ],
+    "test_metrics": {
+        "accuracy": 0.7853333333333333,
+        "precision": 0.5141818181818182,
+        "recall": 0.5327807083647325,
+        "f1_score": 0.5233160621761658,
+        "roc_auc": 0.7634949672403364
+    },
+    "test_confusion_matrix": [
+        [
+            4005,
+            668
+        ],
+        [
+            620,
+            707
+        ]
+    ],
+    "split_sizes": {
+        "training": 18000,
+        "validation": 6000,
+        "test": 6000
+    }
+}
