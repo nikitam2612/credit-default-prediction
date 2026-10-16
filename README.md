@@ -1,4 +1,15 @@
 # Credit Default Prediction
+## 🚀 Live Demo
+
+**Try the application:** [Credit Default Risk Predictor](https://credit-default-risk-predictor.streamlit.app/)
+
+**Source code:** [GitHub Repository](https://github.com/nikitam2612/credit-default-prediction)
+
+Explore an interactive machine learning application that estimates credit card default risk from customer financial and repayment information.
+
+> **Note:** This is an educational project, not a validated tool for real-world credit or lending decisions.
+
+
 
 ## Project Overview
 This project predicts whether a credit card client is likely to default on their next payment using demographic information, credit limits, repayment history, bill amounts, and previous payment amounts.
