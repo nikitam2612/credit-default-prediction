@@ -1,5 +1,6 @@
 
 import json
+import joblib
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -19,6 +20,11 @@ from config import PROJECT_ROOT, TARGET_COLUMN, ID_COLUMN, RANDOM_STATE
 
 METRICS_DIR = PROJECT_ROOT / "outputs" / "metrics"
 METRICS_DIR.mkdir(parents=True, exist_ok=True)
+
+MODELS_DIR = PROJECT_ROOT / "outputs" / "models"
+MODELS_DIR.mkdir(parents=True, exist_ok=True)
+
+MODEL_PATH = MODELS_DIR / "random_forest_model.joblib"
 
 
 def calculate_metrics(y_true, predictions, probabilities):
@@ -113,6 +119,17 @@ def main():
     # If tied, pandas selects the first threshold in the table.
     best_row = results_df.loc[results_df["f1_score"].idxmax()]
     best_threshold = float(best_row["threshold"])
+    model_artifact = {
+        "model": model,
+        "threshold": best_threshold,
+        "feature_names": list(X.columns),
+        "target_column": TARGET_COLUMN,
+        "id_column": ID_COLUMN,
+        "random_state": RANDOM_STATE,
+    }
+
+    joblib.dump(model_artifact, MODEL_PATH)
+    print(f"Saved trained model to: {MODEL_PATH}")
 
     print(f"\nSelected threshold: {best_threshold:.2f}")
     print("Selection criterion: highest validation F1-score")
